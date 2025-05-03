@@ -1,8 +1,6 @@
 import axios from "axios";
 
 
-const API_KEY= 'wxygpcf88b32jdqu2'
-const BASE_URL = "https://techhk.aoscdn.com"
 const MAX_RETRIES = 20;
 
 export const enhancedImageAPI = async (file) => {
@@ -28,14 +26,14 @@ const uploadImage = async (file) => {
   formData.append("image_file", file);
 
   const { data } = await axios.post(
-    `${BASE_URL}/api/tasks/visual/scale`,
+    `${process.env.REACT_APP_BASE_KEY}/api/tasks/visual/scale`,
 
     formData,
 
     {
       headers: {
         "Content-Type": "multipart/form-data",
-        "X-API-Key": API_KEY,
+        "X-API-Key": process.env.REACT_APP_API_KEY,
       },
     }
   );
@@ -49,12 +47,12 @@ const uploadImage = async (file) => {
 
 const fetchEnhancedImage = async (taskid) => {
   const { data } = await axios.get(
-    `${BASE_URL}/api/tasks/visual/scale/${taskid}`,
+    `${process.env.REACT_APP_BASE_KEY}/api/tasks/visual/scale/${taskid}`,
 
     {
       headers: {
         "Content-Type": "multipart/form-data",
-        "X-API-Key": API_KEY,
+        "X-API-Key":  process.env.REACT_APP_API_KEY,
       },
     }
   );
