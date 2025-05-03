@@ -1,6 +1,5 @@
 import axios from "axios";
 
-
 const MAX_RETRIES = 20;
 
 export const enhancedImageAPI = async (file) => {
