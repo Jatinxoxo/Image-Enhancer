@@ -6,7 +6,7 @@ const BASE_URL = "https://techhk.aoscdn.com"
 const MAX_RETRIES = 20;
 
 export const enhancedImageAPI = async (file) => {
-  // code to call API and get enhanced image URL
+  // code to call API and get enhanced image URLnpm r
 
   try {
     const task_id = await uploadImage(file);
